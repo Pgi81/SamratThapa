@@ -50,11 +50,38 @@
   s{
     display:none;
   }
+    /* Loader styles */
+        .loader {
+            border: 8px solid #f3f3f3; /* Light grey */
+            border-top: 8px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 100px auto;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000; /* Ensure it's above other content */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Hide loader once page is fully loaded */
+        .loaded .loader {
+            display: none;
+        }
   </style>
+  
 </head>
 
 <body>
-
+ <div class="loader" id="loader"></div>
+  
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
@@ -713,7 +740,12 @@
         });
     });
   </script>
-  
+   <script>
+        // JavaScript to hide the loader once everything is loaded
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
 </body>
 
 </html>
