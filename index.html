@@ -478,7 +478,7 @@
               <img src="assets/img/portfolio/Screenshot (17).png" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/Screenshot (17).png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                <a href="" title="More Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -744,6 +744,14 @@
         // JavaScript to hide the loader once everything is loaded
         window.addEventListener('load', function() {
             document.body.classList.add('loaded');
+        });
+    </script>
+  <script>
+        // JavaScript to show an alert on button click
+        document.querySelectorAll('.bx-link').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Button with class "jen" was clicked!');
+            });
         });
     </script>
 </body>
